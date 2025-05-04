@@ -71,9 +71,9 @@ void itg3200_init() {
 void itg3200_read_xyz(int16_t *x, int16_t *y, int16_t *z) {
     uint8_t data[6];
     itg3200_read_register(ITG3200_REG_DATAX0, data, 6);
-    *x = (int16_t)((data[1] << 8) | data[0]);
-    *y = (int16_t)((data[3] << 8) | data[2]);
-    *z = (int16_t)((data[5] << 8) | data[4]);
+    *x = (int16_t)((data[0] << 8) | data[1]);
+    *y = (int16_t)((data[2] << 8) | data[3]);
+    *z = (int16_t)((data[4] << 8) | data[5]);
 }
 
 void app_main(void) {
